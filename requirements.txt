@@ -1,0 +1,6 @@
+pytorch-lightning>=1.2.0
+transformers>=4.2.2
+datasets>=1.2.1
+dataclasses>=0.6
+torch>=1.7.1
+fairscale>=0.1.6
