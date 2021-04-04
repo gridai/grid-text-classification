@@ -34,7 +34,7 @@ grid datastores create --source imdb --name imdb
 Here the `--source` represents the path to the data which will be uploaded. The `--name` will be used as the datastore name in Grid. 
 
 When the datastore upload is complete, check the status of the datastore with `grid datastores list`. 
-**Wait until getting message of finished uploading Datastore before moving to the next step.**
+**Wait until Status of datastore shows as Succeeded before moving to the next step.**
 
 ## Submit a training run with Grid
 
