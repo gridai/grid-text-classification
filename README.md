@@ -44,10 +44,10 @@ Here are the parameters we'll specify to `grid train`:
 **Grid flags:**
 1. **--grid_instance_type:** defines number of GPUs and memory
 2. **--grid_gpus:** the number of GPUs per experiment
-3. **--grid_datastore_name:** 
-4. **--grid_datastore_version:** 
-5. **--grid_datastore_mount_dir:**
-6. **--grid_disk_size:**
+3. **--grid_datastore_name:** the name of the datastore (created above) that you'd like to attach to this training run
+4. **--grid_datastore_version:** the version of the datatstore to attach to this training run (defaults to 1)
+5. **--grid_datastore_mount_dir:** directory to mount Datastore in training job
+6. **--grid_disk_size:** the disk size in GB to allocate to each node in the cluster
 
 Then we'll specify the script we're using to train our model followed by the script arguments. 
 
