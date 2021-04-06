@@ -28,7 +28,7 @@ unzip imdb.zip
 Now that you have some data, let's upload that as a Grid Datastore. 
 
 ```
-grid datastores create --source imdb --name imdb
+grid datastores create --source imdb --name imdb-ds
 ```
 
 Here the `--source` represents the path to the data which will be uploaded. The `--name` will be used as the datastore name in Grid. 
