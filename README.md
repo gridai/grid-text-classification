@@ -89,7 +89,7 @@ You can use the `grid status` command to check on the status of the run. To view
 grid train \
     --grid_gpus 1 \
     --grid_instance_type p3.2xlarge \
-    --grid_datastore_name "imdb" \
+    --grid_datastore_name imdb-ds \
     --grid_datastore_version 1 \
     --grid_datastore_mount_dir /dataset/imdb \
     --grid_disk_size 500 \
@@ -107,7 +107,7 @@ grid train \
 grid train \
     --grid_gpus 4 \
     --grid_instance_type p3.8xlarge \
-    --grid_datastore_name "imdb" \
+    --grid_datastore_name imdb-ds \
     --grid_datastore_version 1 \
     --grid_datastore_mount_dir /dataset/imdb \
     --grid_disk_size 500 \
