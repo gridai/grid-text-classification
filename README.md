@@ -71,7 +71,7 @@ grid train \
     --grid_name imdb-demo \
     --grid_gpus 1 \
     --grid_instance_type p3.2xlarge \
-    --grid_datastore_name imdb \
+    --grid_datastore_name imdb-ds \
     --grid_datastore_mount_dir /dataset/imdb \
     --grid_disk_size 500 \
       train.py \
