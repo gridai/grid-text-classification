@@ -1,3 +1,4 @@
+import os
 from argparse import ArgumentParser
 from typing import Optional
 
@@ -77,16 +78,16 @@ class TextClassificationDataModule(pl.LightningDataModule):
         self.test_file = test_file
         self.tokenizer = None
 
-    def setup(self, stage: Optional[str] = None):
+    def setup(self, stage: Optional[str] = None, datadir=os.getcwd()):
 
         data_files = {}
 
         if self.train_file is not None:
-            data_files["train"] = self.train_file
+            data_files["train"] = datadir + self.train_file
         if self.valid_file is not None:
-            data_files["validation"] = self.valid_file
+            data_files["validation"] = datadir + self.valid_file
         if self.test_file is not None:
-            data_files["test"] = self.test_file
+            data_files["test"] = datadir + self.test_file
 
         self.tokenizer = AutoTokenizer.from_pretrained(self.model_name_or_path, use_fast=self.use_fast)
         self.ds = load_dataset(self.dataset_name, self.subset_name, data_files=data_files)
@@ -134,9 +135,9 @@ class TextClassificationDataModule(pl.LightningDataModule):
         parent_parser.add_argument('--num_workers', type=int, default=8)
         parent_parser.add_argument('--use_fast', type=bool, default=True)
         parent_parser.add_argument('--seed', type=int, default=42)
-        parent_parser.add_argument('--train_file', type=str, default=None)
-        parent_parser.add_argument('--valid_file', type=str, default=None)
-        parent_parser.add_argument('--test_file', type=str, default=None)
+        parent_parser.add_argument('--train_file', type=str, default="/imdb/train.csv")
+        parent_parser.add_argument('--valid_file', type=str, default="/imdb/valid.csv")
+        parent_parser.add_argument('--test_file', type=str, default="/imdb/test.csv")
         return parent_parser
 
 

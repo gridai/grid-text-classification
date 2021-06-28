@@ -133,3 +133,9 @@ bert-base-uncased*
 hf-te*
 lightning_logs*
 outputs/
+
+# grid artifacts
+grid_artifacts/*
+
+# imdb
+imdb/*
